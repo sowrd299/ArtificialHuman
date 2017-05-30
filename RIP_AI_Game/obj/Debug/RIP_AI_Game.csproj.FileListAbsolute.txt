@@ -1,0 +1,6 @@
+c:\users\ryan\documents\visual studio 2015\Projects\RIP_AI_Game\RIP_AI_Game\bin\Debug\RIP_AI_Game.exe.config
+C:\Users\Ryan\Documents\Visual Studio 2015\Projects\RIP_AI_Game\RIP_AI_Game\obj\Debug\RIP_AI_Game.csprojResolveAssemblyReference.cache
+C:\Users\Ryan\Documents\Visual Studio 2015\Projects\RIP_AI_Game\RIP_AI_Game\bin\Debug\RIP_AI_Game.exe
+C:\Users\Ryan\Documents\Visual Studio 2015\Projects\RIP_AI_Game\RIP_AI_Game\bin\Debug\RIP_AI_Game.pdb
+C:\Users\Ryan\Documents\Visual Studio 2015\Projects\RIP_AI_Game\RIP_AI_Game\obj\Debug\RIP_AI_Game.exe
+C:\Users\Ryan\Documents\Visual Studio 2015\Projects\RIP_AI_Game\RIP_AI_Game\obj\Debug\RIP_AI_Game.pdb

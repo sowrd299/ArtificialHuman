@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rooms>
+
+  <room name="lab1">A few tables line the walls of the Lab. A cabinet is collapsed in the corner. A fan dangles overhead. In the center of the room, a computer glows patiently on a desk.
+
+A heavy metal door with a large “1” spray-painted stands [*w]. Similar but unmarked doors hang [*s] and [*e].&lt;search,computer,FILE,HIDDEN,Oct18: A lab tech’s body has been found mangled in the bathroom. The cause of death is unclear, but homicide is likely. The police have begun an investigation. Andy has become the prime suspect in the investigation.&gt;
+    <door direction ="e" to="sideHall">
+      <pred class="no"/>
+    </door>
+    <door direction ="w" to="mainHall">
+      <pred class="no"/>
+      <!--<pred class="messenger" messenger="L">L: On it.</pred>-->
+    </door>
+    <door direction ="s" to="frontHall">
+      <pred class="no"/>
+    </door>
+  </room>
+
+  <room name ="lab2">Lab benches stand in neat rows, and computers sit in neat rows on top of them. Server racks and cabinets line the wall. Several have fallen over. Stools, toppled and upright, are strewn throughout. The drawer of a nearby bench is ajar.
+  
+Two doors leed out from the near wall. One [*e], and one [*n].&lt;search,drawer,TEXT,HIDDEN,I is empty, save and only video cable and a laptop.&gt; &lt;search,laptop,FILE,HIDDEN,Aug30: We have named our project “Andy” the Android, even if it technically is an A.I. If I didn’t know better, I would say it likes having a name. It seems Andy is developing a personality. It is very nice, and appears to enjoy being helpful. It is still struggling with complex sentences.&gt;
+    <door direction ="n" to ="backHall">
+      <pred class="no"/>
+    </door>
+    <door direction ="e" to ="mainHall">
+      <pred class="no"/>
+    </door>
+  </room>
+  
+  <room name="lab3">The fan has fallen to the floor, and now lays crumpled in the middle of the lab. Several desks and chairs have been set up around the room, each with a computer on it. A smartphone lies on the desk next to you.
+
+Two doors lead out of the lab: one [*e] and one [*s].&lt;search,smartphone,FILE,HIDDEN, Dec1: We have locked the Artificial Intelligence in the old robotics lab. Artificial Intelligence seems to have developed a Modus Operandi to its killings. It likes to corner its victims in the dead end places in the facility: the bathroom, Lab 5 and so forth. Some members of the company have begun to refuse to go near any place where they could be cornered.&gt;
+    <door direction = "s" to ="mainHall">
+      <pred class="no"/>
+    </door>
+    <door direction ="e" to="backHall">
+      <pred class="no"/>
+    </door>
+  </room>
+
+  <room name ="lab4">The lab is small and cramped. Towers of cardboard boxes imply it was used more for storage than experimentation.
+
+A door [*n] is decorated with an image of a man walking down stairs. The door out is [*w].&lt;search,boxes,TEXT,HIDDEN,You find an assortment of old servos, power-packs, wiring and a flash drive.&gt;&lt;search,drive,FILE,HIDDEN,Nov16: We have dismantled the Artificial Intelligence’s body, and dismissed the robotics department. The Artificial Intelligence does not seem to have reacted well. It is unclear how well it understood what happened, but is has begun speaking in tone I, if I didn’t know better, would call rude. Somehow, this seems to suit his dependence on simple sentences and commands better than his old way of speaking did.&gt;
+    <door direction ="w" to="sideHall">
+      <pred class="no"/>
+    </door>
+    <door direction ="n" to="basement">
+      <pred class="no"/>
+    </door>
+  </room>
+  
+  <room name ="lab5">A great server rack sits, monolithic, in the center of the room. A small computer sits on a little desk before it. The crumpled corpse of a metallic humanoid is crumpled in the corner. A myriad of fading and peeling posters cover the wall.
+
+The door is [*e].&lt;search,posters,TEXT,HIDDEN,On them, robots stand in various triumphant stances. Sometimes they are alone, others they are surrounded by other robots. On many, they are stand together with humans.&gt;&lt;search,computer,TEXT,HIDDEN,You realize that the screen is displaying a maticulous map of the entire facilities electronics, including doors, fans and dooroutlets. This computer could possible control the entire building.&gt;
+    <door direction ="e" to="basement">
+      <pred class="no"/>
+    </door>
+  </room>
+  
+  <room name ="basement">The basement opens up at the bottom of a tight square set of stairs [*s]. A large boiler is pushed up in a corner. There is a large gash is its side, as it hand been torn open. A piece of paper lies on the floor. A number of cabinets and shelving units line the wall.
+
+A once formidable door [*w] hangs on its hinges. The stairs are [*s].&lt;search,paper,TEXT,HIDDEN,It reads: Caution. Extremely dangerous Artificial Intelligence inside. Authorized personal only.&gt;
+    <door direction ="s" to="lab4">
+      <pred class="no"/>
+    </door>
+    <door direction ="w" to="lab5">
+      <pred class="no"/>
+    </door>
+  </room>
+  
+  <room name ="mainHall">The hall is long and sparse.  Burnt out florescent lights and miscellaneous wires run the length of the ceiling.
+
+A broken window and a double door [*w] lead into a large laboratory. The door at the end of the hall [*n] is labeled “3”, and a matching one on [*e] reads “1”. The door [*s] is ajar, and you see tables behind it.
+    <door direction ="w" to ="lab2">
+      <pred class="no"/>
+    </door>
+    <door direction ="e" to ="lab1">
+      <pred class="no"/>
+    </door>
+    <door direction ="n" to ="lab3">
+      <pred class ="no"/>
+    </door>
+    <door direction ="s" to ="breakRoom">
+      <pred class="no"/>
+    </door>
+  </room>
+
+  <room name="breakRoom">Circular tables and black plastic chairs are strewn about. A great chrome refrigerator stands in the corner with a large dent in its front and shining in the light of your flashlight. Various cabinets line the [w] wall. Posters with computer science humor plaster the [e] one.
+
+A door is labeled as the restroom [*s]. A long, empty hall is visible through the ajar door [*n].
+    <door direction ="n" to ="mainHall">
+      <pred class="no"/>
+    </door>
+    <door direction ="s" to ="bathroom">
+      <pred class="no"/>
+    </door>
+  </room>
+
+  <room name="bathroom">The room is preceded by a short yet disorienting corridor, likely to block the line of sight to the outside. The walls and floor are overbearingly monotone gray. A row of uniform black &lt;search,stalls,TEXT,Each one hold a chrome toilet. A briefcase is lying on the floor of the second one.&gt; stands sharply [*s]. Chrome sinks and a broken mirror are oppposite them. A black &lt;search,cross,TEXT,Etched into its front are the words “In Memory, November 8...”&gt; is mounted on the wall. 
+
+The door out is [*e].&lt;search,stall,TEXT,HIDDEN,It hides a chrome toilet. A briefcase is lying on the floor.&gt;&lt;search,briefcase,FILE,HIDDEN,Note: Make the A.I. believe it is part of the team?&gt;
+    <door direction ="e" to="start">
+      <pred class="no"/>
+    </door>
+  </room>
+  
+  <room name="backHall">The hall is long and narrow. Carts with monitor, keyboards and cables sit abandoned against the wall.
+
+There is a lone heavy metal door [*n] labeled “6”. A placard above it reads "control room." A light door is [*w] at the end of the hall, and a heavier one is [*s]. Near the far end, a janitorial closet is held open by a bundle of power cables.&lt;search,closet,TEXT,HIDDEN,The inside is empty a, save a portable fan, a vacuum and a backpack hanging on a hook on the wall. .&gt;&lt;search,backpack,TEXT,HIDDEN,Inside is a cheaply made jumpsuit, a water bottle and a laptop. &gt;&lt;search,laptop,FILE,HIDDEN,Dec18: The Artificial Intelligence begun impersonating people. It killed again today. This time it was one of our own. I was unfortunate enough to…\nThe rest is torn off.&gt;
+    <door direction ="w" to ="lab2">
+      <pred class="no"/>
+    </door>
+    <door direction ="s" to ="sideHall">
+      <pred class="no"/>
+    </door>
+    <door direction ="n" to ="control">
+      <pred class="not">
+        <pred class="messenger" messenger="l">L: He has me cornered. Can you open door 6? Please. You see the controls, right?</pred>
+      </pred>
+    </door>
+  </room>
+  
+  <room name="control">The room is suspended in the eerie glow of a great array of monitors. Before them is a control panel and a lone chair.
+
+The door out is [*s].
+    <door direction ="s" to="backHall">
+      <pred class="not">
+        <pred class="messenger" messenger="l">L: He has me cornered. Can you open door 6? Please. You see the controls, right?</pred>
+      </pred>
+    </door>
+  </room>
+  
+  <room name="sideHall">The hall is short. The only thing in it is a tall cabinet.
+
+At the [w] end is a door to Lab 1. A heavy door labeled “4” in fading white spray-paint [*e]. Another such ublabled door is [*n].&lt;search,cabinet,TEXT,HIDDEN,Inside is a shelf, with a computer on it.&gt;&lt;search,computer,FILE,HIDDEN,Oct16: The Android successfully completed one step cycle. It has traversed 1 meter. All other systems report normal. Speech now includes conditional, subjective and hypothetical sentences. It exhibits an apparent preference for using them.&gt;
+    <door direction ="n" to ="backHall">
+      <pred class="no"/>
+    </door>
+    <door direction ="e" to ="lab4">
+      <pred class="no"/>
+    </door>
+    <door direction ="w" to="lab1">
+      <pred class="nod"/>
+    </door>
+  </room>
+  
+  <room name="start">A grand, rectangular reception desk dominates the room. The blue-gray Walls are bare, save one ceremonial digital clock, a directory, and the name “Sicut Homullus Laboratories” mounted proudly in large capital letters. The “i” is missing its dot, and one “l” is resting on the other.
+
+The is a larg metal door to the right of the desk and [*n]. A sign marks a door [*w] as a restroom.&lt;search,desk,TEXT,HIDDEN,A computer is tucked behind it, as well as a number of drawers. The receptionists chair has been flung to the wall&gt;&lt;search,directory,TEXT,HIDDEN,It reads:
+Lab 1 - Multipurpose
+Lab 2 - Main lab
+Lab 3 – Offices
+Lab 4 - Multipurpose
+Lab 5 - Robotics&gt;
+    <door direction ="w" to ="bathroom">
+      <pred class="no"/>
+    </door>
+    <door direction ="n" to ="frontHall">
+      <pred class="no"/>
+    </door>
+  </room>
+  
+  <room name="frontHall">The air is stale in the hallway. On the wall, an old poster that reads "Forward!"
+  
+There is an old metal door hanging slightly ajar at the end of the hall [*n], and a small door [*s].
+    <door direction ="n" to="lab1">
+      <pred class ="no"/>
+    </door>
+    <door direction ="s" to="start">
+      <pred class ="no"/>
+    </door>
+  </room>
+  
+  <!--old rooms-->
+  
+
+  <room name="other">There is a toppled &lt;search,cabinet,TEXT,It is filled with boxes of old parts.&gt;.&lt;search,boxes,FILE,HIDDEN,Dec21: End of experiment.&gt; A &lt;search,computer,FILE,Key_Code: X01A&gt; glows patiently in the corner. There is a &lt;door,door,back&gt; behind you.
+    <door direction ="back" to="lab1">
+      <pred class ="file" file="key_code"></pred>
+    </door>
+  </room>
+    
+</rooms> 

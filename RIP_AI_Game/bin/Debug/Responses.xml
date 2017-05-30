@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<responses>
+  
+  <messenger name="H">
+    <response>
+      <input>hello</input>
+      <output>hi</output>
+    </response>
+    <response>
+      <input>who are you?</input>
+      <output>You know.</output>
+    </response>
+    <response>
+      <input>it's empty.</input>
+      <input>the cabinet is empty.</input>
+      <input>i only found boxes.</input>
+      <output>Look harder.</output>
+    </response>
+  </messenger>
+
+  <messenger name="L">
+    <!--Has the singature word "-->
+    <response>
+      <input>how do i move?</input>
+      <output>Just walk forward ...or back, left or right.</output>
+    </response>
+    <response>
+      <input>who are you?</input>
+      <output>L, your friend.</output>
+    </response>
+    <response>
+      <input>help</input>
+      <inout>i need help.</inout>
+      <output>Just walk forward, back, left and right, and search things. If you need to, you can also read files. If you get lost, you can just look around.</output>
+    </response>
+    <response>
+      <input>i can't find it.</input>
+      <input>i can't find the file.</input>
+      <output>Keep searching around. It really should be there.</output>
+    </response>
+  </messenger>
+  <response>
+    <input>the door is locked.</input>
+    <input>i can't get out.</input>
+    <input>how do i get out?</input>
+    <output>Maybe there is a key code file? Try searching for it.</output>
+  </response>
+  
+</responses>

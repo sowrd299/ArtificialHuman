@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<plot>
+  <!--nodes in reverse order-->
+  <node name ="3B">
+    <event class ="messenger" sender ="h" next="null">Now we can begin.</event>
+  </node>
+  <node name = "3A">
+    <pred class="room" room="start"></pred>
+    <event class = "text" next ="3B">You enter the key code, and the door opens begrudgingly.</event>
+  </node>
+  <node name ="2.75">
+    <pred class ="file" file ="dec21"></pred>
+    <event class ="messenger" sender ="h" next="3A">Now walk back out.</event>
+  </node>
+  <node name ="2.5">
+    <pred class ="no"></pred>
+    <event class ="messenger" sender ="h" next ="2.75">Have you found the file? It will be titled "Dec21." </event>
+  </node>
+  <node name ="2B">
+    <event class ="messenger" sender ="h" next ="2.5">Search the cabinet. There is a file in it.</event>
+  </node>
+  <node name ="2A">
+    <pred class ="room" room="other"></pred>
+    <event class ="text" next ="2B">The door hisses shut behind you.</event>
+  </node>
+  <node name ="1.5">
+    <event class ="messenger" sender ="l" next="2A">If you need any help, just send me a message.</event>
+  </node>
+  <node name ="1">
+    <event class ="messenger" sender ="h" next ="1.5">If you get lost, you can just stop and look around.</event>
+  </node>
+  <node name ="start">
+    <pred class ="no"></pred>
+    <event class ="messenger" sender ="h" next ="1">Walk forward.</event>
+  </node>
+</plot>

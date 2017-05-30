@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<plot>
+  <node name ="fin">
+    <!--move to this node to end the game-->
+    <event class ="messenger" messenger="h" next="null">The story has ended. Also this isn't actually part of the game, don't worry.</event>
+  </node>
+    
+  <node name="13Y">
+    <event class ="text" next ="fin" prio="3">You hear a nearby buzz, then the sound of the door swining open.</event>
+  </node>
+
+  <node name="13N">
+    <event class ="text" next ="fin" prio="3">You hear a nearby scream.</event>
+  </node>
+
+  <node name="13C">
+    <pred class ="time" count="2"/>
+    <event class ="textFork">You see door 6 is locked. The button to open it is before you.
+Do you press it?<choice next="13Y" text ="yes"/>
+      <choice next="13N" text ="dflt"/>
+    </event>
+  </node>
+
+  <node name="13B">
+    <pred class ="no"/>
+    <event class ="messenger" messenger="h" next ="13C">L is going after you. I drew him away. Don’t Open the door.</event>
+  </node>
+
+  <node name="13A">
+    <pred class ="no"/>
+    <event class ="messenger" messenger="l" next ="13B">He has me cornered. Can you open door 6? Please. You see the controls, right?</event>
+  </node>
+
+  <node name="13a">
+    <event class="messenger" messenger="l" next ="13A">I’ve been forced to relocated.</event>
+  </node>
+
+  <node name="13" class="predFork">
+    <path>
+      <pred class ="messenger" messenger="l">L: Be fast.</pred>
+      <event class ="messenger" messenger="l" next ="13a">You liar!</event>
+    </path>
+    <path>
+      <pred class ="not">
+        <pred class ="messenger" messenger="l">L: Be fast.</pred>
+      </pred>
+      <event class ="text" next ="13A" prio ="3">The computer lights up.</event> 
+    </path>
+  </node>
+
+  <node name="12" class="predFork">
+    <path>
+      <pred class ="room" room="lab5"/>
+      <event class ="messenger" messenger="h" next="13">That housed the Artificial Intelifence. According to the file, it used it to control the facility.</event>
+    </path>
+    <path>
+      <pred class ="room" room="control"/>
+      <event class="text" next="13a" prio ="3">You sit down at the chair.</event>
+    </path>
+  </node>
+
+  <node name="11.5" class="predFork">
+    <path>
+      <pred class ="messenger" messenger="l">You: yes</pred>
+      <event class ="messenger" messenger="l" next ="12">Be fast.</event>
+    </path>
+    <path>
+      <pred class ="messenger" messenger="l">You: no</pred>
+      <event class ="messenger" messenger="l" next ="12">Idiot.</event>
+    </path>
+  </node>
+
+  <node name="11.3">
+    <pred class="no"/>
+    <event class ="messenger" messenger="h" next ="11.5">Hurry up and get to Lab 5!</event>
+  </node>
+    
+  <node name="11.25">
+    <event class ="messenger" messenger="l" next ="11.3">Can you meet me in the control room?</event>
+  </node>
+    
+  <node name="11" class="predFork">
+    <path>
+      <pred class ="messenger" messenger="l">You: yes</pred>
+      <event class ="clear" messenger ="l" next ="11.25"/>
+    </path>
+    <path>
+      <pred class ="messenger" messenger="l">You: no</pred>
+      <event class ="messenger" messenger="l" next ="12">Don't go.</event>
+    </path>
+  </node>
+
+  <node name="10A">
+    <pred class="no"/>
+    <event class="messenger" messenger="l" next ="11">Did H just tell you to go to lab 5?</event>
+  </node>
+
+  <node name ="10">
+    <pred class="timer" count="12"/>
+    <!--adjust time to acomdodated added plot points-->
+    <event class="messenger" messenger="h" next="10A">Accord to this file, Lab 5 is beneath Lab 4. Go search it.</event>
+  </node>
+
+  <!--begin ending (accending)-->
+
+  <node name="7">
+    <pred class="not">
+      <pred class="room" room ="bathroom"/>
+    </pred>
+    <event class ="messenger" messenger="l" next="10">I think I found H's brief case in the bathroom. That's odd. He would never part from this thing...</event>
+  </node>
+    
+  <node name="5">
+    <pred class="timer" count="8"/>
+    <event class ="messenger" messenger="h" next="7">A third person is in the facility. Be careful.</event>
+  </node>
+
+  <node name="4">
+    <pred class="timer" count="4"/>
+    <event class ="messenger" messenger="h" next="5">According to this, they had offices in Lab 3. Consider searching them.</event>
+  </node>
+  
+  <!--middle-->
+  
+  <node name ="3">
+    <pred class="or">
+      <pred class="messenger" messenger="h">You: yes</pred>
+      <pred class="timer" count ="4"/>
+     </pred>
+    <event class="messenger" messenger="h" next="4">Now search the rest of the facility for more files.</event>
+  </node>
+    
+  <node name ="2">
+    <pred class="file" file="oct18"/>
+    <event class="messenger" messenger="h" next="3">Send me a "yes" when you find one.</event>
+  </node>
+
+  <node name ="1" class ="predFork">
+    <path>
+      <pred class="room" room ="frontHall"/>
+      <event class="messenger" messenger="h" next="2">Now walk forward into Lab 1 and look for a computer you can search for useful files.</event>
+    </path>
+    <path>
+      <pred class="room" room ="lab1"/>
+      <event class="messenger" messenger="h" next ="2">Look for a computer you can search for useful files</event>
+    </path>
+  </node>
+
+  <node name ="0B">
+    <pred class="no"/>
+    <event class="messenger" messenger="h" next="1">When you are ready, go forward.</event>
+  </node>
+
+  <node name ="0A">
+    <event class="messenger" messenger="l" next="0B">Welcome to the Team! My name is L, the last minute add on to this search and destroy opperation. If you need any help, just send me a message saying so.</event>
+  </node>
+
+  <node name ="0">
+    <event class="messenger" messenger="h" next="0A">You finally arrived. If you don’t know what to do, read the briefing in your files.</event>
+  </node>
+
+  <node name ="start">
+    <pred class = "no"/>
+    <event class ="file" next ="0">Briefing:
+Objective: Search the Sicut Homullus Laboratories facility and destroy the Artificial Intelligence (A.I.) currently believed to be inhabiting it.
+Threat: A.I. is a known killer.
+Detail: One (1) Commanding Office (“H”), One (1) Staff.
+Notes: Remember to search computers for important data.
+And don't loose your nerves in there.</event>
+  </node>
+
+  <!--begin tutorial (accending)-->
+</plot>
